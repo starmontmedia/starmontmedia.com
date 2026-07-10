@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Starmont Media — Talent Management for Entertainment Creators</title>
+<meta name="description" content="Starmont Media manages brand partnerships, film and OTT promotions, and integrated campaigns for entertainment creators.">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" href="/favicon-180.png">
+<style>
+  :root {
+    --bg: #0d0c0a;
+    --surface: #17140f;
+    --surface-2: #1d1913;
+    --gold: #c9a55a;
+    --gold-dim: #8a7440;
+    --text: #f0ece4;
+    --muted: #9c948a;
+    --hairline: rgba(201, 165, 90, 0.18);
+    --serif: "Didot", "Bodoni MT", "Bodoni 72", Georgia, "Times New Roman", serif;
+    --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    font-size: 17px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 880px; margin: 0 auto; padding: 0 24px; }
+
+  .label {
+    font-size: 12px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 500;
+  }
+
+  header.site { padding: 40px 0 0; }
+  .masthead { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; flex-wrap: wrap; }
+  .wordmark {
+    font-family: var(--serif);
+    font-size: 22px;
+    letter-spacing: 0.30em;
+    text-transform: uppercase;
+    color: var(--text);
+    font-weight: 400;
+    white-space: nowrap;
+  }
+  .wordmark .mark-star { fill: var(--gold); width: 0.5em; height: 0.5em; margin: 0 0.5em; position: relative; top: 0.01em; }
+  .masthead a.contact-link {
+    color: var(--muted); text-decoration: none; font-size: 14px; letter-spacing: 0.04em;
+  }
+  .masthead a.contact-link:hover, .masthead a.contact-link:focus-visible { color: var(--gold); }
+
+  .hero { padding: 110px 0 90px; border-bottom: 1px solid var(--hairline); }
+  .hero h1 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(34px, 5.5vw, 54px);
+    line-height: 1.18;
+    letter-spacing: 0.005em;
+    max-width: 20ch;
+    text-wrap: balance;
+    margin: 22px 0 26px;
+  }
+  .hero h1 em { font-style: italic; color: var(--gold); }
+  .hero p { color: var(--muted); max-width: 58ch; font-size: 18px; }
+
+  section { padding: 78px 0; border-bottom: 1px solid var(--hairline); }
+  section:last-of-type { border-bottom: none; }
+  .section-head { margin-bottom: 44px; }
+
+  .practices { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px 32px; }
+  @media (max-width: 720px) { .practices { grid-template-columns: 1fr; } }
+  .practice h3 {
+    font-family: var(--serif); font-weight: 400; font-size: 21px;
+    margin-bottom: 10px; letter-spacing: 0.01em;
+  }
+  .practice p { color: var(--muted); font-size: 15.5px; }
+
+  .flagship {
+    background: var(--surface);
+    border: 1px solid var(--hairline);
+    border-radius: 4px;
+    padding: 44px 40px;
+    margin-top: 8px;
+  }
+  @media (max-width: 720px) { .flagship { padding: 32px 24px; } }
+  .flagship .name {
+    font-family: var(--serif); font-size: clamp(26px, 4vw, 34px); font-weight: 400;
+    margin: 14px 0 4px;
+  }
+  .flagship .handle { color: var(--muted); font-size: 15px; margin-bottom: 34px; }
+  .stat-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-bottom: 32px; }
+  @media (max-width: 720px) { .stat-row { grid-template-columns: repeat(2, 1fr); } }
+  .stat { border-top: 1px solid rgba(201, 165, 90, 0.4); padding-top: 16px; }
+  .stat .num {
+    font-family: "Bodoni 72", "Bodoni MT", Georgia, serif;
+    font-size: clamp(26px, 3.4vw, 34px);
+    color: var(--gold); font-variant-numeric: lining-nums tabular-nums; line-height: 1.1;
+  }
+  .stat .what { color: var(--text); font-size: 14px; margin-top: 8px; line-height: 1.4; }
+  .stat .qual { color: var(--muted); font-size: 12.5px; margin-top: 3px; line-height: 1.4; }
+  .stat .qual.up { color: #6fbf82; }
+  .flagship .note { color: var(--muted); font-size: 15px; max-width: 60ch; margin-bottom: 0; }
+  .flagship .note strong { color: var(--text); font-weight: 600; }
+  .kit-line {
+    border-top: 1px solid var(--hairline); margin-top: 28px; padding-top: 22px;
+    font-size: 15px; color: var(--text);
+  }
+  .kit-line a { color: var(--gold); text-decoration: none; border-bottom: 1px solid var(--gold-dim); padding-bottom: 1px; }
+  .kit-line a:hover, .kit-line a:focus-visible { border-bottom-color: var(--gold); }
+
+  .btn {
+    display: inline-block;
+    font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 500;
+    color: var(--bg); background: var(--gold);
+    padding: 15px 30px; border-radius: 2px; text-decoration: none;
+    transition: background 140ms ease;
+  }
+  .btn:hover, .btn:focus-visible { background: #dcbb70; }
+  .btn.ghost {
+    background: transparent; color: var(--gold);
+    border: 1px solid var(--gold-dim);
+  }
+  .btn.ghost:hover, .btn.ghost:focus-visible { border-color: var(--gold); background: rgba(201,165,90,0.07); }
+  a:focus-visible, .btn:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+
+  .contact h2 {
+    font-family: var(--serif); font-weight: 400;
+    font-size: clamp(28px, 4.4vw, 40px); line-height: 1.2;
+    max-width: 22ch; text-wrap: balance; margin: 18px 0 14px;
+  }
+  .contact p { color: var(--muted); max-width: 54ch; margin-bottom: 34px; }
+  .contact .email {
+    font-family: var(--serif); font-size: clamp(19px, 3vw, 24px);
+    color: var(--gold); text-decoration: none; border-bottom: 1px solid var(--gold-dim);
+    padding-bottom: 2px;
+  }
+  .contact .email:hover, .contact .email:focus-visible { border-bottom-color: var(--gold); }
+
+  footer.site {
+    padding: 34px 0 44px;
+    border-top: 1px solid var(--hairline);
+    display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap;
+    color: var(--muted); font-size: 13.5px; letter-spacing: 0.03em;
+  }
+  footer.site a { color: var(--muted); text-decoration: none; }
+  footer.site a:hover, footer.site a:focus-visible { color: var(--gold); }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="site">
+    <div class="masthead">
+      <div class="wordmark">Starmont<svg class="mark-star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0 L14.5 9.5 L24 12 L14.5 14.5 L12 24 L9.5 14.5 L0 12 L9.5 9.5 Z"/></svg>Media</div>
+      <a class="contact-link" href="mailto:partnerships@starmontmedia.com">partnerships@starmontmedia.com</a>
+    </div>
+  </header>
+
+  <div class="hero">
+    <div class="label">Talent Management · Entertainment</div>
+    <h1>Representation for creators whose work moves audiences <em>at scale.</em></h1>
+    <p>Starmont Media manages brand partnerships, film and OTT promotions, and integrated
+    campaigns for entertainment creators — with a single point of contact from first
+    enquiry to final deliverable.</p>
+  </div>
+
+  <section>
+    <div class="section-head">
+      <div class="label">What We Handle</div>
+    </div>
+    <div class="practices">
+      <div class="practice">
+        <h3>Campaign Strategy</h3>
+        <p>Pairing titles with the right creator formats — reviews, storytelling takes,
+        commentary — timed to release windows so campaigns land while attention is highest.</p>
+      </div>
+      <div class="practice">
+        <h3>Deal Negotiation</h3>
+        <p>Structured deals, clear deliverables, and clean paperwork. Studios, OTT platforms
+        and brands work with one accountable counterparty throughout.</p>
+      </div>
+      <div class="practice">
+        <h3>Talent Management</h3>
+        <p>Schedules, standards and delivery. Committed dates are met, and every piece of
+        work carries the audience trust it was commissioned for.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <div class="label">Flagship Talent</div>
+    </div>
+    <div class="flagship">
+      <div class="label" style="color: var(--muted); letter-spacing: 0.18em;">Entertainment Creator</div>
+      <div class="name">Siddharth Choudhary</div>
+      <div class="handle">@sidspeakofficial · Instagram &amp; YouTube</div>
+      <div class="stat-row">
+        <div class="stat">
+          <div class="num">646K</div>
+          <div class="what">Followers</div>
+          <div class="qual up">▲ +28% in 90 days</div>
+        </div>
+        <div class="stat">
+          <div class="num">61.7M</div>
+          <div class="what">Views in 90 days</div>
+          <div class="qual">35.8M accounts reached</div>
+        </div>
+        <div class="stat">
+          <div class="num">95%</div>
+          <div class="what">Non-follower views</div>
+          <div class="qual">New audiences every reel</div>
+        </div>
+        <div class="stat">
+          <div class="num">4.92%</div>
+          <div class="what">Engagement rate</div>
+          <div class="qual">2× the peer benchmark</div>
+        </div>
+      </div>
+      <p class="note">Film coverage that reaches millions of new viewers — the audience filling
+      theatres and opening OTT apps. Recent titles include <strong>Spider-Man: Brand New Day
+      (Marvel)</strong>, Border 2, Cocktail 2 and Dhamaal 4.</p>
+      <p class="kit-line">Media kit available on request —
+      <a href="mailto:partnerships@starmontmedia.com">partnerships@starmontmedia.com</a></p>
+    </div>
+  </section>
+
+  <section class="contact">
+    <div class="label">Enquiries</div>
+    <h2>Put your title in front of millions.</h2>
+    <p>For film and OTT promotions, brand integrations and campaign enquiries, write to us —
+    we reply within the day.</p>
+    <a class="email" href="mailto:partnerships@starmontmedia.com">partnerships@starmontmedia.com</a>
+  </section>
+
+  <footer class="site">
+    <span>Starmont Media</span>
+    <a href="mailto:partnerships@starmontmedia.com">partnerships@starmontmedia.com</a>
+  </footer>
+</div>
+
+</body>
+</html>
