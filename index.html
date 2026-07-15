@@ -92,11 +92,18 @@
     margin-top: 8px;
   }
   @media (max-width: 720px) { .flagship { padding: 32px 24px; } }
+  .flagship-head { display: flex; align-items: center; gap: 24px; margin-bottom: 34px; }
+  .flagship .portrait {
+    width: 92px; height: 92px; border-radius: 50%; object-fit: cover;
+    border: 1px solid var(--gold-dim); padding: 3px; background: var(--bg);
+    flex-shrink: 0;
+  }
+  @media (max-width: 720px) { .flagship .portrait { width: 76px; height: 76px; } }
   .flagship .name {
     font-family: var(--serif); font-size: clamp(26px, 4vw, 34px); font-weight: 400;
-    margin: 14px 0 4px;
+    margin: 6px 0 4px;
   }
-  .flagship .handle { color: var(--muted); font-size: 15px; margin-bottom: 34px; }
+  .flagship .handle { color: var(--muted); font-size: 15px; }
   .stat-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-bottom: 32px; }
   @media (max-width: 720px) { .stat-row { grid-template-columns: repeat(2, 1fr); } }
   .stat { border-top: 1px solid rgba(201, 165, 90, 0.4); padding-top: 16px; }
@@ -201,9 +208,14 @@
       <div class="label">Flagship Talent</div>
     </div>
     <div class="flagship">
-      <div class="label" style="color: var(--muted); letter-spacing: 0.18em;">Entertainment Creator</div>
-      <div class="name">Siddharth Choudhary</div>
-      <div class="handle">@sidspeakofficial · Instagram &amp; YouTube</div>
+      <div class="flagship-head">
+        <img class="portrait" src="sid-portrait.jpg" alt="Siddharth Choudhary" width="92" height="92">
+        <div>
+          <div class="label" style="color: var(--muted); letter-spacing: 0.18em;">Entertainment Creator</div>
+          <div class="name">Siddharth Choudhary</div>
+          <div class="handle">@sidspeakofficial · Instagram &amp; YouTube</div>
+        </div>
+      </div>
       <div class="stat-row">
         <div class="stat">
           <div class="num">646K</div>
